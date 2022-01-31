@@ -25,6 +25,7 @@ void work2(std::mutex& mylock1, std::mutex& mylock2) {
 
 int main()
 {
+    //A，B互相争夺资源的死锁
     std::mutex mylock1, mylock2;
     int ans = 0;
     std::thread t1(work1, std::ref(mylock1), std::ref(mylock2));
